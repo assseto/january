@@ -1,0 +1,27 @@
+@Test
+public void invalidEmailTest () throws InterruptedException {
+    WebDriver driver=Common.getDriver();
+    String email=generateEmail();
+    driver.get("http://practice.automationtesting.in/my-account/");
+    driver.findElement(By.id("reg_email")).sendKeys(email);
+    driver.findElement(By.id("reg_password")).sendKeys("p123654p123654wwwwww22!");
+    driver.findElement(By.name("register")).click();
+    Thread.sleep(1000);
+
+       Assert.assertTrue("Regisration in is not successful",
+                RegisrationPage.isRegistratSuccessful (usernameisinvalid));
+    }
+
+
+public void weekpassword () throws InterruptedException {
+    WebDriver driver=Common.getDriver();
+    String email=generateEmail();
+    driver.get("http://practice.automationtesting.in/my-account/");
+    driver.findElement(By.id("reg_email")).sendKeys(email);
+    driver.findElement(By.id("reg_password")).sendKeys("p123654");
+	driver.findElement(By.name("register")).click(button is inactive );
+     errorMessage ("Very week-please enter a strong password");
+   
+    }
+
+
